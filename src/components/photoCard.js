@@ -9,6 +9,7 @@ const style = makeStyles({
     spacePhoto: {
         width: "100%",
         height: 'auto'
+        
     },
     textContainer: {
         display: 'flex',
@@ -20,28 +21,30 @@ const style = makeStyles({
 
 export default function photoCard(props) {
 
-    const [image, setImage] = React.useState(spacePhoto);
-    const [title, setTitle] = React.useState("Test title")
+    const {url, title} = props.data
+
+    // const [image, setImage] = React.useState(spacePhoto);
+    // const [title, setTitle] = React.useState("Test title")
   
-    async function getImage(url) {
+    // async function getImage(url) {
 
-        const headers = {
-            'Access-Control-Allow-Origin': '*'
-        }
+    //     const headers = {
+    //         'Access-Control-Allow-Origin': '*'
+    //     }
 
-        const { data } = await axios.get(`${url}/2022-01-07`, headers)
-        console.log(data)
+    //     const { data } = await axios.get(`${url}/2022-01-07`, headers)
+    //     console.log(data)
 
-        setImage(data.url)
-        setTitle(data.title)
-    }
+    //     setImage(data.url)
+    //     setTitle(data.title)
+    // }
     
     const classes = style()
     
     return (
         <Card>
             <CardMedia>
-                <img className={classes.spacePhoto} src={image} />
+                <img className={classes.spacePhoto} src={url} />
             </CardMedia>
             <CardContent className={classes.textContainer}>
                 <Typography variant="h4">{title}</Typography>
