@@ -7,7 +7,7 @@ const cors = require('cors')
 
 router.use(
     cors({
-        origin: 'http://localhost:8080' 
+        origin: 'https://spacestagram042.herokuapp.com' 
     })
 )
 
