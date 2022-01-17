@@ -7,20 +7,20 @@ const cors = require('cors')
 
 router.use(
     cors({
-        origin: 'https://spacestagram042.herokuapp.com' 
+        origin: 'http://localhost:8080' 
     })
 )
 
 router.get('/', async (req, res) => {
 
-    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`, headers)
+    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`)
 
     res.send(data)
 })
 
 router.get('/range', async (req, res) => {
 
-    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}&start_date=${req.query.start_date}&end_date=${req.query.end_date}`, headers)
+    const { data } = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}&start_date=${req.query.start_date}&end_date=${req.query.end_date}`)
 
     res.send(data)
 })

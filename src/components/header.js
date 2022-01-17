@@ -21,6 +21,6 @@ export default function header() {
             <Typography className={classes.menuItem}>Home</Typography>
             <Typography className={classes.menuItem}>About</Typography>
             <Typography className={classes.menuItem}>Login</Typography>
-        </Toolbar>
+        </Toolbar>  
     )
 }
